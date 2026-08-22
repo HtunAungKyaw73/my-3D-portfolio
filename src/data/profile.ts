@@ -10,6 +10,7 @@ export interface Project {
   url: string
   stars: number
   slug: string
+  stack: string[]
 }
 
 export interface ExperienceItem {
@@ -66,6 +67,17 @@ export const projects: Project[] = [
     url: 'https://github.com/HtunAungKyaw73/Learn-Programming-Easily',
     stars: 9,
     slug: 'learn-programming-easily',
+    stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'MDX', 'Auth.js', 'Tailwind CSS'],
+  },
+  {
+    name: 'SoulScript',
+    description:
+              "A micro-journaling & mood-mapping app built with a team. Journal entries are AES-256-GCM encrypted before ever reaching the database, while AI analyzes your emotions and renders them on an interactive mood calendar — all wrapped in a frosted-glass UI with fluid animations. Features Supabase Row-Level Security, server-side rate limiting, bilingual Burmese/English support via Unicode detection, soft-delete undo, and a Vitest test suite.",
+    language: 'TypeScript',
+    url: 'https://github.com/vibe-code-tours/team-19-app',
+    stars: 4,
+    slug: 'soulscript',
+    stack: ['Next.js', 'Supabase', 'OpenRouter AI', 'TanStack Query', 'AES-256-GCM', 'Tailwind CSS', 'Vitest'],
   },
   {
     name: 'Library-Hub',
@@ -74,6 +86,7 @@ export const projects: Project[] = [
     url: 'https://github.com/HtunAungKyaw73/Library-Hub',
     stars: 1,
     slug: 'library-hub',
+    stack: ['Next.js', 'React', 'RTK Query', 'AG Grid', 'Shadcn/ui', 'Baserow DB'],
   },
   {
     name: 'ExpressServer-JWTAuthentication',
@@ -82,6 +95,7 @@ export const projects: Project[] = [
     url: 'https://github.com/HtunAungKyaw73/ExpressServer-JWTAuthentication',
     stars: 1,
     slug: 'express-prisma',
+    stack: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'JWT'],
   },
   {
     name: 'TeleScrape',
@@ -90,6 +104,7 @@ export const projects: Project[] = [
     url: 'https://github.com/HtunAungKyaw73/TeleScrape',
     stars: 1,
     slug: 'telescape',
+    stack: ['Python', 'Telethon'],
   },
   {
     name: 'Student-and-Teacher-Record-System',
@@ -98,6 +113,7 @@ export const projects: Project[] = [
     url: 'https://github.com/HtunAungKyaw73/Student-and-Teacher-Record-System',
     stars: 1,
     slug: 'student-and-teacher-record-system',
+    stack: ['C++'],
   },
 ]
 
@@ -108,14 +124,14 @@ export const experience: ExperienceItem[] = [
     period: '2023 — Present',
     summary:
       'In the role of Program Associate at ISP-Myanmar, I serve as a in-house developer for interactive analysis dashboards and internal utility microsites. Plus, web scraping with Python, data collection, data cleaning, data analysis, and data visualisation.',
-    highlights: ["Web Development", "React", "NextJS", "RTK", "Python", "Digital Tools", "Excel", "Glide","Data Collection and Cleaning","Data Visualisation"],
+    highlights: ["Web Development", "React", "NextJS", "RTK", "Python", "Digital Tools", "Excel","Data Collection and Cleaning","Data Visualisation"],
   },
   {
     role: 'Founder and Instructor',
     company: 'Learn Programming Easily Education Center',
     period: '2020 - Present',
     summary:
-      '2020 - Present',
+      'It involves Developing course materials, conducting lessons, and mentoring students to enhance their coding skills. Conducted interactive classes that fostered student engagement and participation. Mentored students individually to address their unique learning needs',
     highlights: ["C++", "Python", "Digital Literacy", "Web Development", "HTML5", "CSS3", "JavaScript"],
   },
 ]

@@ -36,7 +36,7 @@ export function HeroSection() {
           </h1>
         </Reveal>
         <Reveal delay={240}>
-          <p className="mx-auto mt-6 max-w-xl rounded bg-[#05060a]/70 px-3 py-2 text-base text-gray-300 backdrop-blur-sm sm:bg-transparent sm:px-0 sm:py-0 sm:text-gray-400 sm:backdrop-blur-none md:text-lg">
+          <p className="mx-auto mt-6 max-w-xl rounded bg-[#05060a]/70 px-3 py-2 text-base text-white backdrop-blur-sm sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none md:text-lg">
             {profile.role} — {profile.tagline}
           </p>
         </Reveal>
@@ -268,6 +268,16 @@ export function ProjectsSection() {
                   <p className="mt-1 line-clamp-2 text-sm text-gray-400">
                     {project.description}
                   </p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {project.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-gray-400"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 <div className="hidden shrink-0 text-right font-mono text-xs sm:block">
                   <p className={langColor[project.language] ?? 'text-gray-300'}>
