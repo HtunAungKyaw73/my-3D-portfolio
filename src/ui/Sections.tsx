@@ -24,7 +24,7 @@ function SectionShell({
 export function HeroSection() {
   return (
     <SectionShell id="Home" className="justify-center text-center">
-      <div className="w-full">
+      <div className="w-full rounded-2xl bg-[#05060a]/70 px-4 py-8 backdrop-blur-sm sm:bg-transparent sm:px-0 sm:py-0">
         <Reveal>
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.4em] text-neon-cyan md:text-sm">
             Hello, I'm
@@ -64,7 +64,7 @@ export function HeroSection() {
 export function AboutSection() {
   return (
     <SectionShell id="About">
-      <div className="max-w-2xl">
+      <div className="max-w-2xl rounded-2xl bg-[#05060a]/70 px-4 py-8 backdrop-blur-sm sm:bg-transparent sm:px-0 sm:py-0">
         <Reveal>
           <p className="mb-3 font-mono text-xs uppercase tracking-[0.4em] text-neon-violet">
             01 · About
