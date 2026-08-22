@@ -121,7 +121,7 @@ export function AboutSection() {
 export function ExperienceSection() {
   if (experience.length === 0) return null
   return (
-    <SectionShell id="Experience">
+    <SectionShell id="Experience" className="py-24">
       <div className="w-full max-w-3xl">
         <Reveal>
           <p className="mb-3 font-mono text-xs uppercase tracking-[0.4em] text-neon-cyan">
@@ -255,7 +255,7 @@ export function ProjectsSection() {
                 href={project.url}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center gap-5 rounded-xl border border-white/10 bg-black/40 p-5 backdrop-blur-md transition-all duration-300 hover:border-neon-cyan/50 hover:bg-neon-cyan/5 hover:shadow-[0_0_32px_rgba(34,211,238,0.15)]"
+                className="group flex flex-col md:flex-row md:items-center gap-5 rounded-xl border border-white/10 bg-black/40 p-5 backdrop-blur-md transition-all duration-300 hover:border-neon-cyan/50 hover:bg-neon-cyan/5 hover:shadow-[0_0_32px_rgba(34,211,238,0.15)]"
               >
                 <ProjectThumb slug={project.slug} name={project.name} />
                 <span className="hidden font-mono text-xs text-gray-600 md:inline">
