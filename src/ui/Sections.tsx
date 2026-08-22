@@ -24,9 +24,9 @@ function SectionShell({
 export function HeroSection() {
   return (
     <SectionShell id="Home" className="justify-center text-center">
-      <div className="w-full rounded-2xl bg-[#05060a]/70 px-4 py-8 backdrop-blur-sm sm:bg-transparent sm:px-0 sm:py-0">
+      <div className="w-full">
         <Reveal>
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.4em] text-neon-cyan md:text-sm">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.4em] text-pink-600 font-bold md:text-sm">
             Hello, I'm
           </p>
         </Reveal>
@@ -36,7 +36,7 @@ export function HeroSection() {
           </h1>
         </Reveal>
         <Reveal delay={240}>
-          <p className="mx-auto mt-6 max-w-xl text-base text-gray-400 md:text-lg">
+          <p className="mx-auto mt-6 max-w-xl rounded bg-[#05060a]/70 px-3 py-2 text-base text-gray-300 backdrop-blur-sm md:text-lg sm:bg-transparent sm:px-0 sm:py-0">
             {profile.role} — {profile.tagline}
           </p>
         </Reveal>
@@ -64,7 +64,7 @@ export function HeroSection() {
 export function AboutSection() {
   return (
     <SectionShell id="About">
-      <div className="max-w-2xl rounded-2xl bg-[#05060a]/70 px-4 py-8 backdrop-blur-sm sm:bg-transparent sm:px-0 sm:py-0">
+      <div className="max-w-2xl">
         <Reveal>
           <p className="mb-3 font-mono text-xs uppercase tracking-[0.4em] text-neon-violet">
             01 · About
@@ -77,7 +77,7 @@ export function AboutSection() {
         </Reveal>
         {profile.bio.map((paragraph, i) => (
           <Reveal key={i} delay={200 + i * 120}>
-            <p className="mb-5 leading-relaxed text-gray-400">{paragraph}</p>
+            <p className="-mx-2 mb-5 rounded bg-[#05060a]/70 px-2 py-1 leading-relaxed text-gray-300 backdrop-blur-sm sm:bg-transparent sm:px-0 sm:py-0">{paragraph}</p>
           </Reveal>
         ))}
         <Reveal delay={460}>
