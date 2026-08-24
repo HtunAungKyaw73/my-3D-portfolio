@@ -87,15 +87,57 @@ const ringConfigs = [
 
 export function SkillConstellation() {
   const group = useRef<THREE.Group>(null)
+  const core = useRef<THREE.Mesh>(null)
+  const shell = useRef<THREE.Mesh>(null)
+  const light = useRef<THREE.PointLight>(null)
+  const coreMat = useRef<THREE.MeshStandardMaterial>(null)
+  const shellMat = useRef<THREE.MeshBasicMaterial>(null)
 
   useFrame((state) => {
     const g = group.current
     if (!g || scrollState.reducedMotion) return
     g.rotation.y = Math.sin(state.clock.elapsedTime * 0.08) * 0.25
+    if (core.current) {
+      core.current.rotation.y += 0.002
+      core.current.rotation.x += 0.001
+    }
+    if (shell.current) shell.current.rotation.y -= 0.0015
+
+    // Brightest at landing (progress 0), eases down as you scroll away
+    const landing = 1 - THREE.MathUtils.smoothstep(scrollState.progress, 0, 0.25)
+    if (coreMat.current) coreMat.current.emissiveIntensity = 0.55 + landing * 0.85
+    if (shellMat.current) shellMat.current.opacity = 0.22 + landing * 0.28
+    if (light.current) light.current.intensity = 14 + landing * 26
   })
 
   return (
     <group ref={group} position={[0, 0, CENTER_Z]}>
+      {/* Single central sphere — warm amber (swapped from teal/green) */}
+      <mesh ref={shell}>
+        <icosahedronGeometry args={[5.8, 3]} />
+        <meshBasicMaterial
+          ref={shellMat}
+          color="#fbbf24"
+          wireframe
+          transparent
+          opacity={0.22}
+        />
+      </mesh>
+      <mesh ref={core}>
+        <icosahedronGeometry args={[5.68, 3]} />
+        <meshStandardMaterial
+          ref={coreMat}
+          color="#431407"
+          emissive="#f59e0b"
+          emissiveIntensity={0.55}
+          transparent
+          opacity={0.62}
+          roughness={0.3}
+          metalness={0.35}
+          flatShading
+        />
+      </mesh>
+      <pointLight ref={light} color="#f59e0b" intensity={14} distance={22} decay={2} />
       {skillGroups.map((groupData, i) => (
         <Ring
           key={groupData.label}

@@ -61,6 +61,16 @@ export const skillGroups: SkillGroup[] = [
 
 export const projects: Project[] = [
   {
+    name: 'The Tipping Point — Myanmar Deforestation',
+    description:
+      'Scrollytelling data story on 25 years of tree cover loss in Myanmar (5.37M ha, 12.5% of 2000 forest) — built from Global Forest Watch data (30% canopy threshold). Scroll-driven choropleth with hand-rolled lon/lat projection & zoom, plus interactive trend, driver & carbon charts. Vanilla JS/SVG, D3 + Scrollama, no build step. Live: myanmar-deforestation-scrollytellin.vercel.app',
+    language: 'JavaScript',
+    url: 'https://github.com/HtunAungKyaw73/myanmar-deforestation-scrollytelling',
+    stars: 0,
+    slug: 'myanmar-deforestation-scrollytelling',
+    stack: ['JavaScript', 'D3.js', 'Scrollama', 'SVG', 'Canvas', 'GeoJSON', 'Global Forest Watch'],
+  },
+  {
     name: 'Learn-Programming-Easily',
     description: 'An interactive platform that makes learning programming approachable for beginners.',
     language: 'TypeScript',

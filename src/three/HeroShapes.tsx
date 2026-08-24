@@ -12,7 +12,6 @@ type Shape = {
 }
 
 const shapes: Shape[] = [
-  { kind: 'icosahedron', position: [0, 0, 0], scale: 1.7, color: '#22d3ee', spin: 0.12 },
   { kind: 'torusKnot', position: [-3.4, 1.2, -1.5], scale: 0.85, color: '#a78bfa', spin: -0.2 },
   { kind: 'icosahedron', position: [3.6, -1.1, -1], scale: 1.05, color: '#f472b6', spin: 0.16 },
   { kind: 'octahedron', position: [2.6, 2.2, -2.5], scale: 0.6, color: '#22d3ee', spin: -0.25 },
